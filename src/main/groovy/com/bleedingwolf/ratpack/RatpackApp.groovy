@@ -46,6 +46,10 @@ class RatpackApp {
         return handlers[method.toUpperCase()]?.route(subject)
     }
 
+    def head = { path, handler ->
+        register('HEAD', path, handler)
+    }
+
     def get = { path, handler ->
         register('GET', path, handler)
     }
@@ -70,6 +74,7 @@ class RatpackApp {
         GroovyScriptEngine gse = new GroovyScriptEngine(scriptFile.canonicalPath.replace(scriptFile.name,''))
         def app = this
         Binding binding = new Binding()
+        binding.setVariable('head', app.head)
         binding.setVariable('get', app.get)
         binding.setVariable('post', app.post)
         binding.setVariable('put', app.put)

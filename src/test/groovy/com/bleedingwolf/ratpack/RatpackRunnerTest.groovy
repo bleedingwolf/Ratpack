@@ -40,6 +40,7 @@ class RatpackRunnerTest {
 			runner.run(testFile)
 		}
 		
+		assert runner.app.head == bindingReceived.getVariable('head')
 		assert runner.app.get == bindingReceived.getVariable('get')
 		assert runner.app.post == bindingReceived.getVariable('post')
 		assert runner.app.put == bindingReceived.getVariable('put')
