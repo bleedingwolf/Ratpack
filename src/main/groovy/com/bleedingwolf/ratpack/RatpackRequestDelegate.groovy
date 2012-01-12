@@ -47,7 +47,7 @@ public class RatpackRequestDelegate {
         if (!response.containsHeader("Content-Type")) {
             contentType("application/json")
         }
-	new JSONObject(o).toString()
+		new JSONObject(o).toString()
     }
 
 }

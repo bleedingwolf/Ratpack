@@ -66,6 +66,14 @@ class RatpackApp {
         register('DELETE', path, handler)
     }
 
+	def register = { method, path, handler ->
+		if (method instanceof List) {
+			register(method as List, path, handler)
+		} else {
+			register(method as String, path, handler)
+		}
+	}
+
     public void prepareScriptForExecutionOnApp(String scriptName){
       prepareScriptForExecutionOnApp(new File(scriptName))
     }
@@ -80,6 +88,7 @@ class RatpackApp {
         binding.setVariable('put', app.put)
         binding.setVariable('delete', app.delete)
         binding.setVariable('set', app.set)
+		binding.setVariable('register', app.register)
         gse.run scriptFile.name, binding
     }
 }
