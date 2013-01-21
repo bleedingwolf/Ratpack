@@ -13,9 +13,9 @@ class RoutingTable {
     
     def route(subject) {
         def found = routeHandlers.find { null != it.route.match(subject) }
-        def newHandler = found.handler.clone()
-
+        
         if (found) {
+            def newHandler = found.handler.clone()
             def urlparams = found.route.match(subject)
             def foundHandler = { ->            
                 newHandler.delegate = delegate
