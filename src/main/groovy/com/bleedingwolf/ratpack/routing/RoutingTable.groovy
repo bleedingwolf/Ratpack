@@ -13,11 +13,13 @@ class RoutingTable {
     
     def route(subject) {
         def found = routeHandlers.find { null != it.route.match(subject) }
+        def newHandler = found.handler.clone()
+
         if (found) {
             def urlparams = found.route.match(subject)
             def foundHandler = { ->            
-                found.handler.delegate = delegate
-                found.handler()
+                newHandler.delegate = delegate
+                newHandler()
             }
             foundHandler.delegate = new RatpackRequestDelegate()
             foundHandler.delegate.urlparams = urlparams
