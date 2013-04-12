@@ -1,7 +1,7 @@
 Ratpack
 =======
 
-#### This project has moved to [https://github.com/ratpack/ratpack]. For version 0.7 and newer, please see that repository.
+#### This project has moved to https://github.com/ratpack/ratpack. For version 0.7 and newer, please see that repository.
 
 A micro web framework for Groovy
 --------------------------------
