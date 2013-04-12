@@ -1,10 +1,7 @@
 Ratpack
 =======
 
-Start Here
-----------
-Tim Berglund has taken over maintainence of Ratpack. To use the new version, start with the 
-[ratpack-template](https://github.com/tlberglund/ratpack-template) project. Enjoy!
+#### This project has moved to [https://github.com/ratpack/ratpack]. For version 0.7 and newer, please see that repository.
 
 A micro web framework for Groovy
 --------------------------------
