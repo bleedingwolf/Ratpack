@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 def loader = this.class.classLoader.rootLoader
 @Grapes([
-	@Grab('org.slf4j:slf4j-simple:1.6.3'),
+	@Grab('org.slf4j:slf4j-simple:1.6.4'),
 	@GrabConfig(systemClassLoader=true)
 ])
 def commandPath = getClass().protectionDomain.codeSource.location.path
